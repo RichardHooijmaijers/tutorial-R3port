@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[ landscape,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\hypertarget{Some simple statistics}{} \bookmark[dest=Some simple statistics,level=0]{Some simple statistics}
+\begingroup\footnotesize\begin{longtable}{lllrrrrr}
+\caption{Some simple statistics}\\
+\toprule
+&&&
+\multicolumn{ 5 }{c}{ Race1 } \\
+\cmidrule(lr){4-8}
+type & name & statistic & Black & Hispanic & Mexican & White & Other \\
+\hline
+\endfirsthead
+\multicolumn{8}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+&&&
+\multicolumn{ 5 }{c}{ Race1 } \\
+\cmidrule(lr){4-8}
+type & name & statistic & Black & Hispanic & Mexican & White & Other \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+\multicolumn{ 7 }{l}{\textit{ categorical }}\\
+& Depressed & None & 542  (45.28) & 259  (42.46) & 396  (39.01) & 3654 (57.34) & 395  (49.01) \\
+ &  & Several & 109  (9.11) & 64   (10.49) & 120  (11.82) & 645  (10.12) & 71   (8.81) \\
+ &  & Most & 67   (5.60) & 40   (6.56) & 40   (3.94) & 244  (3.83) & 27   (3.35) \\
+ &  & NA & 479  (40.02) & 247  (40.49) & 459  (45.22) & 1829 (28.70) & 313  (38.83) \\
+[2ex]
+ & Diabetes & No & 1053 (87.97) & 555  (90.98) & 925  (91.13) & 5840 (91.65) & 725  (89.95) \\
+ &  & Yes & 131  (10.94) & 47   (7.70) & 66   (6.50) & 450  (7.06) & 66   (8.19) \\
+ &  & NA & 13   (1.09) & 8    (1.31) & 24   (2.36) & 82   (1.29) & 15   (1.86) \\
+[2ex]
+ & HealthGen & Excellent & 79   (6.60) & 44   (7.21) & 48   (4.73) & 643  (10.09) & 64   (7.94) \\
+ &  & Vgood & 188  (15.71) & 98   (16.07) & 125  (12.32) & 1918 (30.10) & 179  (22.21) \\
+ &  & Good & 370  (30.91) & 192  (31.48) & 286  (28.18) & 1860 (29.19) & 248  (30.77) \\
+ &  & Fair & 175  (14.62) & 82   (13.44) & 176  (17.34) & 515  (8.08) & 62   (7.69) \\
+ &  & Poor & 27   (2.26) & 14   (2.30) & 33   (3.25) & 97   (1.52) & 16   (1.99) \\
+ &  & NA & 358  (29.91) & 180  (29.51) & 347  (34.19) & 1339 (21.01) & 237  (29.40) \\
+[2ex]
+ & Marijuana & No & 237  (19.80) & 183  (30.00) & 306  (30.15) & 1082 (16.98) & 241  (29.90) \\
+ &  & Yes & 321  (26.82) & 109  (17.87) & 187  (18.42) & 2114 (33.18) & 161  (19.98) \\
+ &  & NA & 639  (53.38) & 318  (52.13) & 522  (51.43) & 3176 (49.84) & 404  (50.12) \\
+[2ex]
+\multicolumn{ 7 }{l}{\textit{ continuous }}\\
+& Height & N & 1197 & 610 & 1015 & 6372 & 806 \\
+ &  & Mean & 161.33 & 156.24 & 155.38 & 164.14 & 157.04 \\
+ &  & Median & 166.10 & 161.50 & 160.65 & 167.70 & 162.30 \\
+ &  & SD & 20.83 & 20.40 & 21.95 & 19.02 & 22.23 \\
+ &  & Min & 84.90 & 85.10 & 83.60 & 83.80 & 85.00 \\
+ &  & Max & 194.90 & 197.20 & 195.00 & 200.40 & 190.60 \\
+[2ex]
+ & Weight & N & 1197 & 610 & 1015 & 6372 & 806 \\
+ &  & Mean & 74.72 & 65.73 & 64.79 & 72.89 & 62.13 \\
+ &  & Median & 76.20 & 68.10 & 69.20 & 74.50 & 62.70 \\
+ &  & SD & 33.12 & 27.74 & 29.26 & 28.23 & 27.25 \\
+ &  & Min & 2.80 & 4.50 & 4.20 & 4.50 & 5.30 \\
+ &  & Max & 230.70 & 188.90 & 159.10 & 203.00 & 180.60 \\
+[2ex]
+\end{longtable}
+
+\endgroup
+\end{document}

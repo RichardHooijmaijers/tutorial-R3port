@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[ landscape,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\hypertarget{table}{} \bookmark[dest=table,level=0]{table}
+\begingroup\footnotesize\begin{longtable}{lrr}
+\caption{table}\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 32 &  \\
+56818 & 15 &  \\
+56925 & 66 &  \\
+57914 & 79 &  \\
+58756 & 64 &  \\
+61630 & 42 &  \\
+65570 &  & 16 \\
+69460 &  & 50 \\
+70652 &  & 16 \\
+71570 &  & 3 \\
+\end{longtable}
+
+\endgroup
+\end{document}

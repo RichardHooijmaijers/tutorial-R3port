@@ -1,0 +1,26 @@
+\hypertarget{listing}{} \bookmark[dest=listing,level=0]{listing}
+\begingroup\footnotesize\begin{longtable}{llll}
+\caption{listing}\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 2009/10 & male & 32 \\
+56818 & 2009/10 & male & 15 \\
+56925 & 2009/10 & female & 66 \\
+57914 & 2009/10 & female & 79 \\
+58756 & 2009/10 & female & 64 \\
+61630 & 2009/10 & female & 42 \\
+65570 & 2011/12 & male & 16 \\
+69460 & 2011/12 & male & 50 \\
+70652 & 2011/12 & female & 16 \\
+71570 & 2011/12 & male &  3 \\
+\end{longtable}
+
+\endgroup

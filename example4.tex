@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[ portrait,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\hypertarget{Stratified average weights}{} \bookmark[dest=Stratified average weights,level=0]{Stratified average weights}
+\begingroup\footnotesize\begin{longtable}{llrrrr}
+\caption{Stratified average weights}\\
+\toprule
+&&
+\multicolumn{2}{c}{female}&\multicolumn{2}{c}{male} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Schooling & AgeDecade & 2009/10 & 2011/12 & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{6}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+&&
+\multicolumn{2}{c}{female}&\multicolumn{2}{c}{male} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Schooling & AgeDecade & 2009/10 & 2011/12 & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+\multicolumn{ 5 }{l}{\textit{ Highest education received: 8th Grade }}\\
+&  20-29 & 89 & 85 & - & 83 \\
+ &  30-39 & 75 & 73 & 83 & 89 \\
+ &  40-49 & 68 & 74 & 84 & 91 \\
+ &  50-59 & 70 & 79 & 78 & 79 \\
+ &  60-69 & 75 & 69 & 100 & 82 \\
+ &  70+ & 64 & 73 & 92 & 77 \\
+ & NA & 71 & 65 & - & - \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: 9 - 11th Grade }}\\
+&  20-29 & 74 & 75 & 86 & 90 \\
+ &  30-39 & 87 & 70 & 100 & 86 \\
+ &  40-49 & 80 & - & 83 & 89 \\
+ &  50-59 & 74 & 75 & - & 87 \\
+ &  60-69 & - & - & - & 93 \\
+ &  70+ & 71 & 75 & 84 & 94 \\
+ & NA & 74 & 58 & 88 & 73 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: College Grad }}\\
+&  20-29 & 70 & 71 & 83 & 86 \\
+ &  30-39 & 76 & 73 & 89 & 89 \\
+ &  40-49 & - & - & - & 89 \\
+ &  50-59 & 73 & - & 90 & 90 \\
+ &  60-69 & 78 & 73 & 88 & - \\
+ &  70+ & 77 & 76 & 84 & - \\
+ & NA & 64 & 64 & 84 & 81 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: High School }}\\
+&  20-29 & - & 76 & - & 88 \\
+ &  30-39 & 81 & 85 & 92 & 90 \\
+ &  40-49 & - & 79 & 96 & 89 \\
+ &  50-59 & 87 & 75 & 93 & 92 \\
+ &  60-69 & 78 & - & 89 & 90 \\
+ &  70+ & - & 75 & - & 88 \\
+ & NA & 71 & 65 & - & - \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: NA }}\\
+&  0-9 & - & - & - & - \\
+ &  10-19 & - & - & - & 64 \\
+ &  20-29 & - & - & 58 & - \\
+ &  30-39 & - & - & 68 & - \\
+ &  40-49 & 58 & - & - & - \\
+ &  60-69 & 67 & - & - & - \\
+ &  70+ & 53 & 53 & - & - \\
+ & NA & - & - & - & 56 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: Some College }}\\
+&  20-29 & 75 & - & - & 85 \\
+ &  30-39 & 83 & - & 94 & 89 \\
+ &  40-49 & 78 & - & 95 & 97 \\
+ &  50-59 & 77 & 77 & - & - \\
+ &  60-69 & 80 & - & - & 97 \\
+ &  70+ & 85 & - & - & 93 \\
+ & NA & 63 & 61 & 81 & 89 \\
+\end{longtable}
+
+\endgroup
+\end{document}

@@ -1,0 +1,214 @@
+---
+title: "Tutorial reporting tables using the R3port package"
+author: "Richard Hooijmaijers"
+date: "10/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This tutorial shows how the `R3port` package can be used to report various types tables. 
+When creating tables in R today, there are many options. You can go for any type of output (html/pdf/docx), apply infinite formatting and add some interactivity as well. When doing some research for this tutorial, I almost got lost in all the options.
+
+This was a bit different when I had to create my first appendix for a clinical report using R about 8 years ago. I had done this before using SAS but never in R. At that time `xtable` combined with `Sweave` was basically the only option. It didn't quite satisfy my needs, so within this project I first started the development of the `R3port` package. But does it have any added value today? Well I think so, maybe because I am biased, but I will leave that up to the reader.
+
+## The data
+
+So for this tutorial I used the `NHANES` package for the data. This is survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960's. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).
+
+This dataset is not exactly a clinical dataset, for which the package was setup. However I tried to make the package as generic as possible. To demonstrate the functionality, this dataset should therefore suffice.
+
+## List and tabulate
+
+The `R3port` package has a fair amount of  functionality to create tables and listings. The options for these functions are limited, but contain the ones essential for clinical reporting. 
+Below are some examples on how to construct tables that can be placed directly in a latex document. These latex documents are by default compiled and opened directly, so the table can be checked. Below the code chunk, a hyperlink to the actual output is given.
+
+
+```{r, message=FALSE}
+library(NHANES)
+library(dplyr)
+library(tidyr)
+library(R3port)
+library(xtable)
+library(gt)
+set.seed(123)
+```
+
+```{r}
+ex1   <- NHANES %>% filter(ID%in%sample(ID,10)) %>% select(ID,SurveyYr,Gender,Age) %>%
+           distinct(ID, .keep_all = TRUE) %>% mutate(SurveyYr=sub("_","/",SurveyYr))
+
+ltx_list(ex1,out="example1.tex")
+ltx_table(ex1,x="ID",y="SurveyYr",var="Age",out="example2.tex")
+```
+<a target="_blank" href="example1.pdf">example1.pdf</a><br/>
+<a target="_blank" href="example2.pdf">example2.pdf</a><br/>
+
+The next chunk provide some customization of the output to make the tables a bit more fancy.
+
+```{r}
+ex1 <- NHANES %>% filter(ID%in%sample(ID,50)) %>% 
+         select(AgeDecade,ID,SurveyYr,Gender,MaritalStatus,Age,Weight) %>% 
+         distinct(ID,.keep_all = TRUE) %>% as.data.frame()
+  
+attr(ex1$Age,"label")    <- "Age (yr)"
+attr(ex1$Weight,"label") <- "Weight (kg)"
+
+ltx_list(ex1,
+         title       = "Example 3 table",
+         vargroup    = c("",rep(c("","Categorical","Continuous"),each=2)),
+         tablenote   = "this table right..",
+         mancol      = "p{3cm}llllll",
+         group       = 1,
+         tabenv      = "tabular",
+         label       = "ex3",
+         orientation = "portrait",
+         flt         = "H",
+         show        = FALSE,
+         out         = "example3.tex")
+
+ex2 <- NHANES %>% group_by(SurveyYr,Gender,AgeDecade,Education) %>% 
+         summarise(avgWT=round(mean(Weight))) %>% 
+         mutate(Year=sub("_","/",SurveyYr),Schooling=paste("Highest education received:",Education))
+
+ltx_table(ex2,
+          x           = c("Schooling","AgeDecade"),
+          y           = c("Gender","Year"),
+          var         = "avgWT",
+          title       = "Stratified average weights",
+          xabove      = TRUE,
+          fill        = "-",
+          orientation = "portrait",
+          show        = FALSE,
+          out         = "example4.tex")
+
+```
+<a target="_blank" href="example3.pdf">example3.pdf</a><br/>
+<a target="_blank" href="example4.pdf">example4.pdf</a><br/>
+
+In the chunk above, the listing that was created has options for adding an additional header to hold information regarding the type of variables being displayed. Furthermore settings for a title, grouping and general table formatting are applied. For the table, the added value for the rearrangement of data (pivoting) can be seen. The main added value here is that the header is automatically formatted. Also the "xabove" argument can help in making the table more dense, which is often necessary for large clinical tables to avoid that the table runs off a page. 
+
+## Summary statistics
+
+When creating tables for clinical trials, it is often necessary to calculate and display summary statistics and frequencies. The package includes two relatively simple functions to do this. The following chunk gives an example of the calculations and subsequent tabulation
+
+```{r}
+ex1a <- NHANES %>% select(ID,Race1,Weight,Height) %>%
+          pivot_longer(cols=c(Weight,Height)) %>% means("value",c("Race1","name"))
+
+denm <- data.frame(table(NHANES$Race1)) %>% rename(Race1=Var1,dnm=Freq)
+ex1b <- NHANES %>% select(ID,Race1,Diabetes,HealthGen,Depressed,Marijuana) %>%
+          pivot_longer(cols=c(Diabetes,HealthGen,Depressed,Marijuana)) %>%
+          freq(c("Race1","name","value"),denom=denm) %>%
+          rename(statistic=value,value=FreqPerc) %>%
+          select(Race1,name,statistic,value)
+
+ex1  <- rbind(cbind(type="continuous",ex1a),cbind(type="categorical",ex1b))
+ltx_table(ex1,
+          x      = c("type","name","statistic"),
+          y      = "Race1",
+          var    = "value",
+          title  = "Some simple statistics",
+          xabove = TRUE,
+          yhead  = TRUE,
+          show   = FALSE,
+          group  = 2,
+          fill   = "-",
+          out    = "example5.tex")
+```
+<a target="_blank" href="example5.pdf">example5.pdf</a><br/>
+
+This table shows that it is relatively simple to calculate some statistics and combine continuous and categorical variables in a single table. The statistical functions are however quite basic and in case other statistics should be calculated it is advised to just use `dplyr`.
+
+## Other packages
+
+As stated, when the package was initially developed, there were not many R packages available for tabulation. This is not longer true, but fortunately there is a way to also include tables from other packages as well. This is possible through the `ltx_doc` function. This low level function is used by the `ltx_list` and `ltx_table` functions as well, which means the output is uniform. Below are two examples to include `xtable` and `gt` output. All packages that can return latex code can be used in this way.
+
+```{r}
+ex1 <- NHANES %>% select(ID,Gender,Age) %>% filter(as.numeric(ID)<51659) 
+ltx_doc(print(xtable(ex1),print.results=FALSE),out="example6.tex",show=FALSE)
+
+ex2 <- gt(ex1) %>% as_latex()
+ltx_doc(ex2,out="example7.tex",show=FALSE)
+```
+<a target="_blank" href="example6.pdf">example6.pdf</a><br/>
+<a target="_blank" href="example7.pdf">example7.pdf</a><br/>
+
+## To print or not to print
+
+All the examples up to this point are based on latex/PDF output. The output functions mentioned are intended for inclusion in a latex report. When it is not necessary to print out or include the results in a report, it is also possible to create HTML output. The doc/table/list functions all have a HTML counterpart. The chunk below shows how the tables from the second chunk can be made in HTML.
+
+```{r}
+ex1 <- NHANES %>% filter(ID%in%sample(ID,50)) %>% 
+         select(AgeDecade,ID,SurveyYr,Gender,MaritalStatus,Age,Weight) %>% 
+         distinct(ID,.keep_all = TRUE) %>% as.data.frame()
+  
+attr(ex1$Age,"label")    <- "Age (yr)"
+attr(ex1$Weight,"label") <- "Weight (kg)"
+
+html_list(ex1,
+          title       = "Example 8 table",
+          vargroup    = c("",rep(c("","Categorical","Continuous"),each=2)),
+          footnote    = "this table right..",
+          group       = 1,
+          show        = FALSE,
+          out         = "example8.html")
+
+ex2 <- NHANES %>% group_by(SurveyYr,Gender,AgeDecade,Education) %>% 
+         summarise(avgWT=round(mean(Weight))) %>% 
+         mutate(Year=sub("_","/",SurveyYr),Schooling=paste("Highest education received:",Education))
+
+html_table(ex2,
+           x           = c("Schooling","AgeDecade"),
+           y           = c("Gender","Year"),
+           var         = "avgWT",
+           title       = "Stratified average weights",
+           xabove      = TRUE,
+           fill        = "-",
+           show        = FALSE,
+           out         = "example9.html")
+```
+<a target="_blank" href="example8.html">example8.html</a><br/>
+<a target="_blank" href="example9.html">example9.html</a><br/>
+
+## Combine everything
+
+All the examples above create a single file for a table or listing. As stated in the introduction, the package was developed to create an appendix for a clinical report. So having single output files is not ideal. For this reason the package creates raw files for each table or listing. These raw files can then be combined in a full report/appendix.  
+
+```{r}
+ltx_combine(out="overall1.tex",orientation="portrait",show=FALSE)
+html_combine(out="overall1.html",toctheme=TRUE,show=FALSE,
+             template=paste0(system.file(package="R3port"),"/bootstrap.html"))
+```
+<a target="_blank" href="overall1.pdf">overall1.pdf</a><br/>
+<a target="_blank" href="overall1.html">overall1.html</a><br/>
+
+## Styling
+
+The last part of this tutorial is about styling. As every company has their own house style, it should be possible to apply some style to the output documents. This is implemented in the package by using the `whisker` package. All the generated output is placed inside a whisker template before compiling. This means different types of templates can be used. Some templates are available in the package but it is possible to write an entire template from scratch or based on one of the templates available in the package. Below are some example outputs for a few templates available in the package, but also a custom template where additional information is added. In this example the template is applied to a combined document, but the same method can be used for individual tables.
+
+```{r}
+ltx_combine(list(c("example1.tex.rawtex","example2.tex.rawtex")),
+            out="overall2.tex",template=paste0(system.file(package="R3port"),"/beamer.tex"),
+            show=FALSE,presentation=TRUE)
+ltx_combine(out="overall3.tex",orientation="portrait",rtitle="Final report",
+            template=paste0(system.file(package="R3port"),"/listing_full.tex"),show=FALSE)
+
+ltx_combine(out="overall4.tex",orientation="portrait",rtitle="Final report",
+            template="custom.tex",show=FALSE,rendlist=list(author="Richard"))
+```
+<a target="_blank" href="overall2.pdf">overall2.pdf</a><br/>
+<a target="_blank" href="overall3.pdf">overall3.pdf</a><br/>
+<a target="_blank" href="overall4.pdf">overall4.pdf</a><br/>
+
+## Conclusion
+
+This tutorial shows how the R3port package can help in making (large) appendices of tables in an automated fashion. Although there are currently multiple packages to create tables and automated reports (using rmarkdown for instance), this package can have added value to that. In case of constructing appendices, rmarkdown can be a bit overkill. This package allows for quick checking of individual tables and easy combining to create large appendices.
+Furthermore, the tabulation functions have the ability to create and customize a decent range of various tables. For more complex tables, the package implements the usage of additional R packages.
+This tutorial is focused on tables and listings, which is the main functionality of the package. Other output (e.g. raw text or plots) can also be included, for more information on this check out the [repository](https://github.com/RichardHooijmaijers/R3port).
+
+

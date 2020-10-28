@@ -1,0 +1,283 @@
+\documentclass{article}
+\usepackage[ portrait,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}\usepackage[T1]{fontenc}
+\title{ Final report }
+\author{ Richard }
+\date{\today}
+\begin{document}
+\maketitle
+\clearpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+\hypertarget{listing}{} \bookmark[dest=listing,level=0]{listing}
+\begingroup\footnotesize\begin{longtable}{llll}
+\caption{listing}\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 2009/10 & male & 32 \\
+56818 & 2009/10 & male & 15 \\
+56925 & 2009/10 & female & 66 \\
+57914 & 2009/10 & female & 79 \\
+58756 & 2009/10 & female & 64 \\
+61630 & 2009/10 & female & 42 \\
+65570 & 2011/12 & male & 16 \\
+69460 & 2011/12 & male & 50 \\
+70652 & 2011/12 & female & 16 \\
+71570 & 2011/12 & male &  3 \\
+\end{longtable}
+
+\endgroup
+\newpage
+\hypertarget{table}{} \bookmark[dest=table,level=0]{table}
+\begingroup\footnotesize\begin{longtable}{lrr}
+\caption{table}\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 32 &  \\
+56818 & 15 &  \\
+56925 & 66 &  \\
+57914 & 79 &  \\
+58756 & 64 &  \\
+61630 & 42 &  \\
+65570 &  & 16 \\
+69460 &  & 50 \\
+70652 &  & 16 \\
+71570 &  & 3 \\
+\end{longtable}
+
+\endgroup
+\newpage
+\hypertarget{Example 3 table}{} \bookmark[dest=Example 3 table,level=0]{Example 3 table}
+\begin{table}[H]
+\caption{Example 3 table}\label{ex3} \footnotesize\begin{tabular}{p{3cm}llllll}
+
+\hline
+\multicolumn{3}{c}{}&\multicolumn{2}{c}{Categorical}&\multicolumn{2}{c}{Continuous} \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-7}
+AgeDecade & ID & SurveyYr & Gender & MaritalStatus & Age (yr) & Weight (kg)\\
+\hline
+ 0-9 & 60188 & 2009\_10 & female & NA &  4 &  16.2 \\
+ & 60960 & 2009\_10 & male & NA &  4 &  30.8 \\
+ & 64386 & 2011\_12 & female & NA &  9 &  43.1 \\
+ & 65422 & 2011\_12 & male & NA &  7 &  25.0 \\
+ & 69003 & 2011\_12 & male & NA &  7 &  18.0 \\
+ & 69126 & 2011\_12 & male & NA &  3 &  16.7 \\
+ & 70679 & 2011\_12 & male & NA &  4 &  19.1 \\
+[2ex]
+ 10-19 & 51722 & 2009\_10 & male & NA & 16 &  88.9 \\
+ & 52740 & 2009\_10 & male & NA & 19 &  80.0 \\
+ & 53167 & 2009\_10 & male & NA & 11 &  56.4 \\
+ & 54997 & 2009\_10 & male & NA & 10 &  29.4 \\
+ & 57437 & 2009\_10 & male & NA & 15 &  42.6 \\
+ & 58374 & 2009\_10 & male & NA & 10 &  38.1 \\
+ & 70237 & 2011\_12 & male & NA & 13 &  54.0 \\
+[2ex]
+ 20-29 & 52223 & 2009\_10 & male & NeverMarried & 21 &  84.0 \\
+ & 59988 & 2009\_10 & female & Married & 24 & 145.7 \\
+ & 65565 & 2011\_12 & male & LivePartner & 27 &  88.4 \\
+ & 66205 & 2011\_12 & female & Divorced & 28 & 120.0 \\
+ & 68690 & 2011\_12 & female & Married & 29 & 116.2 \\
+[2ex]
+ 30-39 & 52080 & 2009\_10 & male & LivePartner & 30 &  73.7 \\
+ & 54963 & 2009\_10 & female & Married & 39 & 102.2 \\
+ & 56040 & 2009\_10 & female & LivePartner & 38 &  66.8 \\
+ & 57061 & 2009\_10 & female & Married & 34 &  64.2 \\
+ & 57773 & 2009\_10 & female & NeverMarried & 30 &  59.8 \\
+ & 60493 & 2009\_10 & female & Married & 33 &  81.9 \\
+ & 64485 & 2011\_12 & male & LivePartner & 32 & 111.3 \\
+ & 68021 & 2011\_12 & male & NeverMarried & 34 &  70.9 \\
+ & 68353 & 2011\_12 & male & Married & 36 &  89.8 \\
+ & 70367 & 2011\_12 & female & Married & 36 &  62.5 \\
+[2ex]
+ 40-49 & 56909 & 2009\_10 & female & Married & 48 & 116.3 \\
+ & 57907 & 2009\_10 & male & Married & 48 &  82.1 \\
+ & 61322 & 2009\_10 & male & NeverMarried & 42 &  86.7 \\
+ & 66614 & 2011\_12 & female & Married & 44 &  79.5 \\
+ & 67594 & 2011\_12 & male & Married & 43 &  87.4 \\
+ & 68901 & 2011\_12 & female & LivePartner & 47 &  67.7 \\
+ & 70706 & 2011\_12 & female & Married & 48 &  58.8 \\
+ & 70932 & 2011\_12 & female & Married & 43 &  55.3 \\
+[2ex]
+ 50-59 & 53781 & 2009\_10 & female & Married & 52 &  45.6 \\
+ & 64315 & 2011\_12 & female & NeverMarried & 52 &  64.5 \\
+ & 66848 & 2011\_12 & female & Married & 52 &  55.8 \\
+[2ex]
+ 60-69 & 57740 & 2009\_10 & female & Divorced & 63 &  84.2 \\
+ & 57945 & 2009\_10 & female & Divorced & 67 &  73.7 \\
+ & 59826 & 2009\_10 & female & Widowed & 67 &  50.2 \\
+ & 70142 & 2011\_12 & female & Widowed & 69 &  62.8 \\
+ & 71169 & 2011\_12 & male & Married & 62 &  76.9 \\
+ & 71869 & 2011\_12 & male & Married & 69 & 113.9 \\
+[2ex]
+ 70+ & 64309 & 2011\_12 & female & Married & 78 &  74.9 \\
+ & 69848 & 2011\_12 & male & Married & 70 & 101.0 \\
+[2ex]
+NA & 62368 & 2011\_12 & female & Widowed & 80 &  54.2 \\
+ & 69566 & 2011\_12 & male & Married & 80 &  70.2 \\
+[2ex]
+\hline\end{tabular}\\
+this table right..
+\end{table}
+\newpage
+\hypertarget{Stratified average weights}{} \bookmark[dest=Stratified average weights,level=0]{Stratified average weights}
+\begingroup\footnotesize\begin{longtable}{llrrrr}
+\caption{Stratified average weights}\\
+\toprule
+&&
+\multicolumn{2}{c}{female}&\multicolumn{2}{c}{male} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Schooling & AgeDecade & 2009/10 & 2011/12 & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{6}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+&&
+\multicolumn{2}{c}{female}&\multicolumn{2}{c}{male} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Schooling & AgeDecade & 2009/10 & 2011/12 & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+\multicolumn{ 5 }{l}{\textit{ Highest education received: 8th Grade }}\\
+&  20-29 & 89 & 85 & - & 83 \\
+ &  30-39 & 75 & 73 & 83 & 89 \\
+ &  40-49 & 68 & 74 & 84 & 91 \\
+ &  50-59 & 70 & 79 & 78 & 79 \\
+ &  60-69 & 75 & 69 & 100 & 82 \\
+ &  70+ & 64 & 73 & 92 & 77 \\
+ & NA & 71 & 65 & - & - \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: 9 - 11th Grade }}\\
+&  20-29 & 74 & 75 & 86 & 90 \\
+ &  30-39 & 87 & 70 & 100 & 86 \\
+ &  40-49 & 80 & - & 83 & 89 \\
+ &  50-59 & 74 & 75 & - & 87 \\
+ &  60-69 & - & - & - & 93 \\
+ &  70+ & 71 & 75 & 84 & 94 \\
+ & NA & 74 & 58 & 88 & 73 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: College Grad }}\\
+&  20-29 & 70 & 71 & 83 & 86 \\
+ &  30-39 & 76 & 73 & 89 & 89 \\
+ &  40-49 & - & - & - & 89 \\
+ &  50-59 & 73 & - & 90 & 90 \\
+ &  60-69 & 78 & 73 & 88 & - \\
+ &  70+ & 77 & 76 & 84 & - \\
+ & NA & 64 & 64 & 84 & 81 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: High School }}\\
+&  20-29 & - & 76 & - & 88 \\
+ &  30-39 & 81 & 85 & 92 & 90 \\
+ &  40-49 & - & 79 & 96 & 89 \\
+ &  50-59 & 87 & 75 & 93 & 92 \\
+ &  60-69 & 78 & - & 89 & 90 \\
+ &  70+ & - & 75 & - & 88 \\
+ & NA & 71 & 65 & - & - \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: NA }}\\
+&  0-9 & - & - & - & - \\
+ &  10-19 & - & - & - & 64 \\
+ &  20-29 & - & - & 58 & - \\
+ &  30-39 & - & - & 68 & - \\
+ &  40-49 & 58 & - & - & - \\
+ &  60-69 & 67 & - & - & - \\
+ &  70+ & 53 & 53 & - & - \\
+ & NA & - & - & - & 56 \\
+\multicolumn{ 5 }{l}{\textit{ Highest education received: Some College }}\\
+&  20-29 & 75 & - & - & 85 \\
+ &  30-39 & 83 & - & 94 & 89 \\
+ &  40-49 & 78 & - & 95 & 97 \\
+ &  50-59 & 77 & 77 & - & - \\
+ &  60-69 & 80 & - & - & 97 \\
+ &  70+ & 85 & - & - & 93 \\
+ & NA & 63 & 61 & 81 & 89 \\
+\end{longtable}
+
+\endgroup
+\newpage
+\hypertarget{Some simple statistics}{} \bookmark[dest=Some simple statistics,level=0]{Some simple statistics}
+\begingroup\footnotesize\begin{longtable}{lllrrrrr}
+\caption{Some simple statistics}\\
+\toprule
+&&&
+\multicolumn{ 5 }{c}{ Race1 } \\
+\cmidrule(lr){4-8}
+type & name & statistic & Black & Hispanic & Mexican & White & Other \\
+\hline
+\endfirsthead
+\multicolumn{8}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+&&&
+\multicolumn{ 5 }{c}{ Race1 } \\
+\cmidrule(lr){4-8}
+type & name & statistic & Black & Hispanic & Mexican & White & Other \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+\multicolumn{ 7 }{l}{\textit{ categorical }}\\
+& Depressed & None & 542  (45.28) & 259  (42.46) & 396  (39.01) & 3654 (57.34) & 395  (49.01) \\
+ &  & Several & 109  (9.11) & 64   (10.49) & 120  (11.82) & 645  (10.12) & 71   (8.81) \\
+ &  & Most & 67   (5.60) & 40   (6.56) & 40   (3.94) & 244  (3.83) & 27   (3.35) \\
+ &  & NA & 479  (40.02) & 247  (40.49) & 459  (45.22) & 1829 (28.70) & 313  (38.83) \\
+[2ex]
+ & Diabetes & No & 1053 (87.97) & 555  (90.98) & 925  (91.13) & 5840 (91.65) & 725  (89.95) \\
+ &  & Yes & 131  (10.94) & 47   (7.70) & 66   (6.50) & 450  (7.06) & 66   (8.19) \\
+ &  & NA & 13   (1.09) & 8    (1.31) & 24   (2.36) & 82   (1.29) & 15   (1.86) \\
+[2ex]
+ & HealthGen & Excellent & 79   (6.60) & 44   (7.21) & 48   (4.73) & 643  (10.09) & 64   (7.94) \\
+ &  & Vgood & 188  (15.71) & 98   (16.07) & 125  (12.32) & 1918 (30.10) & 179  (22.21) \\
+ &  & Good & 370  (30.91) & 192  (31.48) & 286  (28.18) & 1860 (29.19) & 248  (30.77) \\
+ &  & Fair & 175  (14.62) & 82   (13.44) & 176  (17.34) & 515  (8.08) & 62   (7.69) \\
+ &  & Poor & 27   (2.26) & 14   (2.30) & 33   (3.25) & 97   (1.52) & 16   (1.99) \\
+ &  & NA & 358  (29.91) & 180  (29.51) & 347  (34.19) & 1339 (21.01) & 237  (29.40) \\
+[2ex]
+ & Marijuana & No & 237  (19.80) & 183  (30.00) & 306  (30.15) & 1082 (16.98) & 241  (29.90) \\
+ &  & Yes & 321  (26.82) & 109  (17.87) & 187  (18.42) & 2114 (33.18) & 161  (19.98) \\
+ &  & NA & 639  (53.38) & 318  (52.13) & 522  (51.43) & 3176 (49.84) & 404  (50.12) \\
+[2ex]
+\multicolumn{ 7 }{l}{\textit{ continuous }}\\
+& Height & N & 1197 & 610 & 1015 & 6372 & 806 \\
+ &  & Mean & 161.33 & 156.24 & 155.38 & 164.14 & 157.04 \\
+ &  & Median & 166.10 & 161.50 & 160.65 & 167.70 & 162.30 \\
+ &  & SD & 20.83 & 20.40 & 21.95 & 19.02 & 22.23 \\
+ &  & Min & 84.90 & 85.10 & 83.60 & 83.80 & 85.00 \\
+ &  & Max & 194.90 & 197.20 & 195.00 & 200.40 & 190.60 \\
+[2ex]
+ & Weight & N & 1197 & 610 & 1015 & 6372 & 806 \\
+ &  & Mean & 74.72 & 65.73 & 64.79 & 72.89 & 62.13 \\
+ &  & Median & 76.20 & 68.10 & 69.20 & 74.50 & 62.70 \\
+ &  & SD & 33.12 & 27.74 & 29.26 & 28.23 & 27.25 \\
+ &  & Min & 2.80 & 4.50 & 4.20 & 4.50 & 5.30 \\
+ &  & Max & 230.70 & 188.90 & 159.10 & 203.00 & 180.60 \\
+[2ex]
+\end{longtable}
+
+\endgroup
+\newpage
+\end{document}

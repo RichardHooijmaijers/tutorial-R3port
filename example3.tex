@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[ portrait,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\hypertarget{Example 3 table}{} \bookmark[dest=Example 3 table,level=0]{Example 3 table}
+\begin{table}[H]
+\caption{Example 3 table}\label{ex3} \footnotesize\begin{tabular}{p{3cm}llllll}
+
+\hline
+\multicolumn{3}{c}{}&\multicolumn{2}{c}{Categorical}&\multicolumn{2}{c}{Continuous} \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-7}
+AgeDecade & ID & SurveyYr & Gender & MaritalStatus & Age (yr) & Weight (kg)\\
+\hline
+ 0-9 & 60188 & 2009\_10 & female & NA &  4 &  16.2 \\
+ & 60960 & 2009\_10 & male & NA &  4 &  30.8 \\
+ & 64386 & 2011\_12 & female & NA &  9 &  43.1 \\
+ & 65422 & 2011\_12 & male & NA &  7 &  25.0 \\
+ & 69003 & 2011\_12 & male & NA &  7 &  18.0 \\
+ & 69126 & 2011\_12 & male & NA &  3 &  16.7 \\
+ & 70679 & 2011\_12 & male & NA &  4 &  19.1 \\
+[2ex]
+ 10-19 & 51722 & 2009\_10 & male & NA & 16 &  88.9 \\
+ & 52740 & 2009\_10 & male & NA & 19 &  80.0 \\
+ & 53167 & 2009\_10 & male & NA & 11 &  56.4 \\
+ & 54997 & 2009\_10 & male & NA & 10 &  29.4 \\
+ & 57437 & 2009\_10 & male & NA & 15 &  42.6 \\
+ & 58374 & 2009\_10 & male & NA & 10 &  38.1 \\
+ & 70237 & 2011\_12 & male & NA & 13 &  54.0 \\
+[2ex]
+ 20-29 & 52223 & 2009\_10 & male & NeverMarried & 21 &  84.0 \\
+ & 59988 & 2009\_10 & female & Married & 24 & 145.7 \\
+ & 65565 & 2011\_12 & male & LivePartner & 27 &  88.4 \\
+ & 66205 & 2011\_12 & female & Divorced & 28 & 120.0 \\
+ & 68690 & 2011\_12 & female & Married & 29 & 116.2 \\
+[2ex]
+ 30-39 & 52080 & 2009\_10 & male & LivePartner & 30 &  73.7 \\
+ & 54963 & 2009\_10 & female & Married & 39 & 102.2 \\
+ & 56040 & 2009\_10 & female & LivePartner & 38 &  66.8 \\
+ & 57061 & 2009\_10 & female & Married & 34 &  64.2 \\
+ & 57773 & 2009\_10 & female & NeverMarried & 30 &  59.8 \\
+ & 60493 & 2009\_10 & female & Married & 33 &  81.9 \\
+ & 64485 & 2011\_12 & male & LivePartner & 32 & 111.3 \\
+ & 68021 & 2011\_12 & male & NeverMarried & 34 &  70.9 \\
+ & 68353 & 2011\_12 & male & Married & 36 &  89.8 \\
+ & 70367 & 2011\_12 & female & Married & 36 &  62.5 \\
+[2ex]
+ 40-49 & 56909 & 2009\_10 & female & Married & 48 & 116.3 \\
+ & 57907 & 2009\_10 & male & Married & 48 &  82.1 \\
+ & 61322 & 2009\_10 & male & NeverMarried & 42 &  86.7 \\
+ & 66614 & 2011\_12 & female & Married & 44 &  79.5 \\
+ & 67594 & 2011\_12 & male & Married & 43 &  87.4 \\
+ & 68901 & 2011\_12 & female & LivePartner & 47 &  67.7 \\
+ & 70706 & 2011\_12 & female & Married & 48 &  58.8 \\
+ & 70932 & 2011\_12 & female & Married & 43 &  55.3 \\
+[2ex]
+ 50-59 & 53781 & 2009\_10 & female & Married & 52 &  45.6 \\
+ & 64315 & 2011\_12 & female & NeverMarried & 52 &  64.5 \\
+ & 66848 & 2011\_12 & female & Married & 52 &  55.8 \\
+[2ex]
+ 60-69 & 57740 & 2009\_10 & female & Divorced & 63 &  84.2 \\
+ & 57945 & 2009\_10 & female & Divorced & 67 &  73.7 \\
+ & 59826 & 2009\_10 & female & Widowed & 67 &  50.2 \\
+ & 70142 & 2011\_12 & female & Widowed & 69 &  62.8 \\
+ & 71169 & 2011\_12 & male & Married & 62 &  76.9 \\
+ & 71869 & 2011\_12 & male & Married & 69 & 113.9 \\
+[2ex]
+ 70+ & 64309 & 2011\_12 & female & Married & 78 &  74.9 \\
+ & 69848 & 2011\_12 & male & Married & 70 & 101.0 \\
+[2ex]
+NA & 62368 & 2011\_12 & female & Widowed & 80 &  54.2 \\
+ & 69566 & 2011\_12 & male & Married & 80 &  70.2 \\
+[2ex]
+\hline\end{tabular}\\
+this table right..
+\end{table}
+\end{document}

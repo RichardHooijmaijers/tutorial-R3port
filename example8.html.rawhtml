@@ -1,0 +1,66 @@
+<h1>Example 8 table</h1>
+<table class='sample'>
+<tr><td colspan=' 7 '></td></tr>
+<td colspan='3'></td><td id='fh' colspan='2'>Categorical</td><td id='fh' colspan='2'>Continuous</td>
+<tr><td colspan=' 7 '></td></tr>
+</tr><td id='lh'> AgeDecade </td><td id='lh'> ID </td><td id='lh'> SurveyYr </td><td id='lh'> Gender </td><td id='lh'> MaritalStatus </td><td id='lh'> Age (yr) </td><td id='lh'> Weight (kg) </td></tr>
+<td>  0-9 </td><td> 53638 </td><td> 2009_10 </td><td> male </td><td> NA </td><td> 6 </td><td> 17.6 </td></tr>
+<td>  </td><td> 58426 </td><td> 2009_10 </td><td> female </td><td> NA </td><td> 5 </td><td> 18.8 </td></tr>
+<td>  </td><td> 59512 </td><td> 2009_10 </td><td> male </td><td> NA </td><td> 4 </td><td> 20.5 </td></tr>
+<td>  </td><td> 70289 </td><td> 2011_12 </td><td> male </td><td> NA </td><td> 8 </td><td> 27.8 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  10-19 </td><td> 55700 </td><td> 2009_10 </td><td> male </td><td> NA </td><td> 15 </td><td> 51.7 </td></tr>
+<td>  </td><td> 61547 </td><td> 2009_10 </td><td> male </td><td> NA </td><td> 15 </td><td> 74.8 </td></tr>
+<td>  </td><td> 65689 </td><td> 2011_12 </td><td> male </td><td> NA </td><td> 19 </td><td> 112.7 </td></tr>
+<td>  </td><td> 66305 </td><td> 2011_12 </td><td> female </td><td> NA </td><td> 13 </td><td> 77.7 </td></tr>
+<td>  </td><td> 68408 </td><td> 2011_12 </td><td> female </td><td> NA </td><td> 16 </td><td> 118 </td></tr>
+<td>  </td><td> 68410 </td><td> 2011_12 </td><td> male </td><td> NA </td><td> 16 </td><td> 63.8 </td></tr>
+<td>  </td><td> 71167 </td><td> 2011_12 </td><td> female </td><td> NA </td><td> 19 </td><td> 82 </td></tr>
+<td>  </td><td> 71588 </td><td> 2011_12 </td><td> female </td><td> NA </td><td> 12 </td><td> 45 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  20-29 </td><td> 54489 </td><td> 2009_10 </td><td> female </td><td> NeverMarried </td><td> 21 </td><td> 43.1 </td></tr>
+<td>  </td><td> 59927 </td><td> 2009_10 </td><td> female </td><td> LivePartner </td><td> 26 </td><td> 64.7 </td></tr>
+<td>  </td><td> 63793 </td><td> 2011_12 </td><td> female </td><td> Divorced </td><td> 27 </td><td> 57.9 </td></tr>
+<td>  </td><td> 63943 </td><td> 2011_12 </td><td> female </td><td> LivePartner </td><td> 29 </td><td> 81.8 </td></tr>
+<td>  </td><td> 66954 </td><td> 2011_12 </td><td> female </td><td> NeverMarried </td><td> 27 </td><td> 64.6 </td></tr>
+<td>  </td><td> 70018 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 28 </td><td> 131.1 </td></tr>
+<td>  </td><td> 71280 </td><td> 2011_12 </td><td> female </td><td> LivePartner </td><td> 23 </td><td> 44.4 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  30-39 </td><td> 53742 </td><td> 2009_10 </td><td> male </td><td> Married </td><td> 38 </td><td> 73.3 </td></tr>
+<td>  </td><td> 58730 </td><td> 2009_10 </td><td> male </td><td> Married </td><td> 38 </td><td> 86.6 </td></tr>
+<td>  </td><td> 62222 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 32 </td><td> 80.1 </td></tr>
+<td>  </td><td> 62974 </td><td> 2011_12 </td><td> male </td><td> NeverMarried </td><td> 30 </td><td> 76.3 </td></tr>
+<td>  </td><td> 64213 </td><td> 2011_12 </td><td> male </td><td> LivePartner </td><td> 37 </td><td> 129.5 </td></tr>
+<td>  </td><td> 65174 </td><td> 2011_12 </td><td> female </td><td> Married </td><td> 31 </td><td> 77.6 </td></tr>
+<td>  </td><td> 65889 </td><td> 2011_12 </td><td> male </td><td> NeverMarried </td><td> 30 </td><td> 98.9 </td></tr>
+<td>  </td><td> 70639 </td><td> 2011_12 </td><td> female </td><td> LivePartner </td><td> 34 </td><td> 83.2 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  40-49 </td><td> 53019 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 44 </td><td> 62.7 </td></tr>
+<td>  </td><td> 56234 </td><td> 2009_10 </td><td> male </td><td> Married </td><td> 44 </td><td> 81.3 </td></tr>
+<td>  </td><td> 60112 </td><td> 2009_10 </td><td> female </td><td> Separated </td><td> 48 </td><td> 123.9 </td></tr>
+<td>  </td><td> 60486 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 49 </td><td> 59.3 </td></tr>
+<td>  </td><td> 61523 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 48 </td><td> 63.1 </td></tr>
+<td>  </td><td> 64403 </td><td> 2011_12 </td><td> male </td><td> Widowed </td><td> 40 </td><td> 104 </td></tr>
+<td>  </td><td> 67503 </td><td> 2011_12 </td><td> female </td><td> NeverMarried </td><td> 45 </td><td> 100.4 </td></tr>
+<td>  </td><td> 67707 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 46 </td><td> 108.8 </td></tr>
+<td>  </td><td> 69019 </td><td> 2011_12 </td><td> female </td><td> Married </td><td> 44 </td><td> 63.9 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  50-59 </td><td> 51951 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 56 </td><td> 69.6 </td></tr>
+<td>  </td><td> 60192 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 59 </td><td> 82.3 </td></tr>
+<td>  </td><td> 68058 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 50 </td><td> 100.9 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  60-69 </td><td> 61248 </td><td> 2009_10 </td><td> female </td><td> Married </td><td> 60 </td><td> 88 </td></tr>
+<td>  </td><td> 62840 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 60 </td><td> 110.4 </td></tr>
+<td>  </td><td> 64824 </td><td> 2011_12 </td><td> male </td><td> Divorced </td><td> 62 </td><td> 106 </td></tr>
+<td>  </td><td> 66600 </td><td> 2011_12 </td><td> female </td><td> Divorced </td><td> 64 </td><td> 72.4 </td></tr>
+<td>  </td><td> 70495 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 68 </td><td> 98.2 </td></tr>
+<td>  </td><td> 70581 </td><td> 2011_12 </td><td> female </td><td> Married </td><td> 63 </td><td> 66.6 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td>  70+ </td><td> 56599 </td><td> 2009_10 </td><td> male </td><td> Married </td><td> 70 </td><td> 102.8 </td></tr>
+<td>  </td><td> 63284 </td><td> 2011_12 </td><td> male </td><td> Married </td><td> 79 </td><td> 82.8 </td></tr>
+<td>  </td><td> 67668 </td><td> 2011_12 </td><td> female </td><td> Widowed </td><td> 70 </td><td> 96.6 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+<td> NA </td><td> 70349 </td><td> 2011_12 </td><td> female </td><td> Widowed </td><td> 80 </td><td> 67.1 </td></tr>
+<tr><td id='grps' colspan='7'></td></tr>
+</table>
+this table right..

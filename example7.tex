@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[ landscape,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\captionsetup[table]{labelformat=empty,skip=1pt}
+\begin{longtable}{ccc}
+\toprule
+ID & Gender & Age \\ 
+\midrule
+51624 & male & 34 \\ 
+51624 & male & 34 \\ 
+51624 & male & 34 \\ 
+51625 & male & 4 \\ 
+51630 & female & 49 \\ 
+51638 & male & 9 \\ 
+51646 & male & 8 \\ 
+51647 & female & 45 \\ 
+51647 & female & 45 \\ 
+51647 & female & 45 \\ 
+51654 & male & 66 \\ 
+51656 & male & 58 \\ 
+51657 & male & 54 \\ 
+\bottomrule
+\end{longtable}
+
+\end{document}

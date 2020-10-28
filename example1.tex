@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[ landscape,a4paper,top=1in, bottom=1.2in, left=0.75in, right=0.75in]{geometry}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,caption,listings,float}
+\usepackage[figuresleft]{rotating}
+\setlength\parindent{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTcapwidth}{8in}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{}\rfoot{}\lhead{\today}\rhead{\thepage\ of \pageref{LastPage}}
+\makeatletter \renewcommand*\l@table{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\makeatletter \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{6em}} \makeatother
+\begin{document}
+\hypertarget{listing}{} \bookmark[dest=listing,level=0]{listing}
+\begingroup\footnotesize\begin{longtable}{llll}
+\caption{listing}\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 2009/10 & male & 32 \\
+56818 & 2009/10 & male & 15 \\
+56925 & 2009/10 & female & 66 \\
+57914 & 2009/10 & female & 79 \\
+58756 & 2009/10 & female & 64 \\
+61630 & 2009/10 & female & 42 \\
+65570 & 2011/12 & male & 16 \\
+69460 & 2011/12 & male & 50 \\
+70652 & 2011/12 & female & 16 \\
+71570 & 2011/12 & male &  3 \\
+\end{longtable}
+
+\endgroup
+\end{document}

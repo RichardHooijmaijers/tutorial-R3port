@@ -1,0 +1,26 @@
+\hypertarget{table}{} \bookmark[dest=table,level=0]{table}
+\begingroup\footnotesize\begin{longtable}{lrr}
+\caption{table}\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 32 &  \\
+56818 & 15 &  \\
+56925 & 66 &  \\
+57914 & 79 &  \\
+58756 & 64 &  \\
+61630 & 42 &  \\
+65570 &  & 16 \\
+69460 &  & 50 \\
+70652 &  & 16 \\
+71570 &  & 3 \\
+\end{longtable}
+
+\endgroup

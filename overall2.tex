@@ -1,0 +1,69 @@
+\documentclass[8pt]{beamer}
+\usetheme[]{Berlin}
+%\definecolor{mynewcol}{RGB}{1,166,171}
+%\usecolortheme[named=mynewcol]{structure}
+\usepackage{lmodern} \renewcommand*\familydefault{\sfdefault} \usepackage[T1]{fontenc}
+\usepackage{graphicx,longtable,amsfonts,booktabs,fancyhdr,lastpage,hyperref,bookmark,float}
+\usepackage[figuresleft]{rotating}
+\begin{document}
+\title[{\makebox[.95\paperwidth]{\hfill\insertframenumber/\inserttotalframenumber}}]{ report \\}
+\setbeamertemplate{navigation symbols}{}
+\begin{frame}\titlepage
+\end{frame}
+\begin{frame}[fragile,allowframebreaks]
+\hypertarget{listing}{} \bookmark[dest=listing,level=0]{listing}
+\begingroup\footnotesize\begin{longtable}{llll}
+%\caption{}\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & SurveyYr & Gender & Age\\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 2009/10 & male & 32 \\
+56818 & 2009/10 & male & 15 \\
+56925 & 2009/10 & female & 66 \\
+57914 & 2009/10 & female & 79 \\
+58756 & 2009/10 & female & 64 \\
+61630 & 2009/10 & female & 42 \\
+65570 & 2011/12 & male & 16 \\
+69460 & 2011/12 & male & 50 \\
+70652 & 2011/12 & female & 16 \\
+71570 & 2011/12 & male &  3 \\
+\end{longtable}
+
+\endgroup
+\end{frame}
+\begin{frame}[fragile,allowframebreaks]
+\hypertarget{table}{} \bookmark[dest=table,level=0]{table}
+\begingroup\footnotesize\begin{longtable}{lrr}
+%\caption{}\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\tablename~\thetable{}: (continued)}\\\\
+\toprule
+ID & 2009/10 & 2011/12 \\
+\hline
+\endhead \hline \endfoot \hline
+\endlastfoot
+55460 & 32 &  \\
+56818 & 15 &  \\
+56925 & 66 &  \\
+57914 & 79 &  \\
+58756 & 64 &  \\
+61630 & 42 &  \\
+65570 &  & 16 \\
+69460 &  & 50 \\
+70652 &  & 16 \\
+71570 &  & 3 \\
+\end{longtable}
+
+\endgroup
+\end{frame}
+\end{document}
