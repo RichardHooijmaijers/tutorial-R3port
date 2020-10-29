@@ -1,7 +1,7 @@
 ---
 title: "Tutorial reporting tables using the R3port package"
 author: "Richard Hooijmaijers"
-date: "10/27/2020"
+date: "10/29/2020"
 output: html_document
 ---
 
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-This tutorial shows how the `R3port` package can be used to report various types tables. 
+This tutorial shows how the `R3port` package can be used to report various types of tables. 
 When creating tables in R today, there are many options. You can go for any type of output (html/pdf/docx), apply infinite formatting and add some interactivity as well. When doing some research for this tutorial, I almost got lost in all the options.
 
 This was a bit different when I had to create my first appendix for a clinical report using R about 8 years ago. I had done this before using SAS but never in R. At that time `xtable` combined with `Sweave` was basically the only option. It didn't quite satisfy my needs, so within this project I first started the development of the `R3port` package. But does it have any added value today? Well I think so, maybe because I am biased, but I will leave that up to the reader.
@@ -122,11 +122,11 @@ ltx_table(ex1,
 ```
 <a target="_blank" href="example5.pdf">example5.pdf</a><br/>
 
-This table shows that it is relatively simple to calculate some statistics and combine continuous and categorical variables in a single table. The statistical functions are however quite basic and in case other statistics should be calculated it is advised to just use `dplyr`.
+This table shows that it is relatively simple to calculate some statistics and combine continuous and categorical variables in a single table. The statistical functions are however quite basic and in case other statistics should be calculated it is advised to use something like `dplyr`.
 
 ## Other packages
 
-As stated, when the package was initially developed, there were not many R packages available for tabulation. This is not longer true, but fortunately there is a way to also include tables from other packages as well. This is possible through the `ltx_doc` function. This low level function is used by the `ltx_list` and `ltx_table` functions as well, which means the output is uniform. Below are two examples to include `xtable` and `gt` output. All packages that can return latex code can be used in this way.
+As stated, when the package was initially developed, there were not many R packages available for tabulation. This is not longer true, but fortunately there is a way to include tables from other packages as well. This is possible through the `ltx_doc` function. This low level function is used by the `ltx_list` and `ltx_table` functions as well, which means the output is uniform. Below are two examples to include `xtable` and `gt` output. All packages that can return latex code can be used in this way.
 
 ```{r}
 ex1 <- NHANES %>% select(ID,Gender,Age) %>% filter(as.numeric(ID)<51659) 

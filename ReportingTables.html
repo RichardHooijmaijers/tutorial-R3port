@@ -11,7 +11,7 @@
 
 <meta name="author" content="Richard Hooijmaijers" />
 
-<meta name="date" content="2020-10-27" />
+<meta name="date" content="2020-10-29" />
 
 <title>Tutorial reporting tables using the R3port package</title>
 
@@ -374,14 +374,14 @@ summary {
 
 <h1 class="title toc-ignore">Tutorial reporting tables using the R3port package</h1>
 <h4 class="author">Richard Hooijmaijers</h4>
-<h4 class="date">10/27/2020</h4>
+<h4 class="date">10/29/2020</h4>
 
 </div>
 
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This tutorial shows how the <code>R3port</code> package can be used to report various types tables. When creating tables in R today, there are many options. You can go for any type of output (html/pdf/docx), apply infinite formatting and add some interactivity as well. When doing some research for this tutorial, I almost got lost in all the options.</p>
+<p>This tutorial shows how the <code>R3port</code> package can be used to report various types of tables. When creating tables in R today, there are many options. You can go for any type of output (html/pdf/docx), apply infinite formatting and add some interactivity as well. When doing some research for this tutorial, I almost got lost in all the options.</p>
 <p>This was a bit different when I had to create my first appendix for a clinical report using R about 8 years ago. I had done this before using SAS but never in R. At that time <code>xtable</code> combined with <code>Sweave</code> was basically the only option. It didn’t quite satisfy my needs, so within this project I first started the development of the <code>R3port</code> package. But does it have any added value today? Well I think so, maybe because I am biased, but I will leave that up to the reader.</p>
 </div>
 <div id="the-data" class="section level2">
@@ -469,11 +469,11 @@ ltx_table(ex1,
           fill   = &quot;-&quot;,
           out    = &quot;example5.tex&quot;)</code></pre>
 <p><a target="_blank" href="example5.pdf">example5.pdf</a><br /></p>
-<p>This table shows that it is relatively simple to calculate some statistics and combine continuous and categorical variables in a single table. The statistical functions are however quite basic and in case other statistics should be calculated it is advised to just use <code>dplyr</code>.</p>
+<p>This table shows that it is relatively simple to calculate some statistics and combine continuous and categorical variables in a single table. The statistical functions are however quite basic and in case other statistics should be calculated it is advised to use something like <code>dplyr</code>.</p>
 </div>
 <div id="other-packages" class="section level2">
 <h2>Other packages</h2>
-<p>As stated, when the package was initially developed, there were not many R packages available for tabulation. This is not longer true, but fortunately there is a way to also include tables from other packages as well. This is possible through the <code>ltx_doc</code> function. This low level function is used by the <code>ltx_list</code> and <code>ltx_table</code> functions as well, which means the output is uniform. Below are two examples to include <code>xtable</code> and <code>gt</code> output. All packages that can return latex code can be used in this way.</p>
+<p>As stated, when the package was initially developed, there were not many R packages available for tabulation. This is not longer true, but fortunately there is a way to include tables from other packages as well. This is possible through the <code>ltx_doc</code> function. This low level function is used by the <code>ltx_list</code> and <code>ltx_table</code> functions as well, which means the output is uniform. Below are two examples to include <code>xtable</code> and <code>gt</code> output. All packages that can return latex code can be used in this way.</p>
 <pre class="r"><code>ex1 &lt;- NHANES %&gt;% select(ID,Gender,Age) %&gt;% filter(as.numeric(ID)&lt;51659) 
 ltx_doc(print(xtable(ex1),print.results=FALSE),out=&quot;example6.tex&quot;,show=FALSE)
 
